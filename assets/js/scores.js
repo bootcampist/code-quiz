@@ -1,6 +1,4 @@
-const localUser = localStorage.getItem('user');
 const localArray = localStorage.getItem('userArray');
-let user;
 let userArray;
 const olEl = document.getElementById('highscores');
 let liEl = document.createElement('li');
@@ -15,7 +13,7 @@ function localArrayInfo() {
             liAppend(userArray[i]);
         };   
     };
-}
+};
 
 function liAppend (item) {
         let liText = `${item.name} - ${item.score}`;
@@ -35,3 +33,5 @@ function clearHighScore () {
 clear.addEventListener('click', ()=>{clearHighScore()});
 
 localArrayInfo();
+
+

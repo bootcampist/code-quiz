@@ -14,7 +14,7 @@ const questions = [{
     name: "question3",
     question: "How can an object be turned into a string to be stored in Local Storage?",
     answer: "variable = JSON.stringify(object);",
-    incorrect: ["variable = object.stringForm();","variable = object.toString();", "variable = JSON.stringSet(object);"]
+    incorrect: ["variable = object.stringForm();","variable = object.toString();", "variable = JSON.setString(object);"]
 },
 {
     name: "question4",
@@ -143,10 +143,23 @@ function feedback (string) {
     feedbackDiv.style.display = 'block';
     if (string===correct){
         feedbackDiv.innerHTML = 'Correct!';
+         audio('correct');
     } else {
         feedbackDiv.innerHTML = 'Wrong!';
+        audio('incorrect');
     }
     let feedbackTimer = setTimeout(()=>{feedbackDiv.style.display = 'none';}, 1500);
+};
+
+function audio (sound){
+    let audioEl = document.createElement('audio');
+    audioEl.setAttribute('autoplay', 'true');
+    
+    const quizSound = document.createElement('source');
+    quizSound.setAttribute('src', `./assets/sfx/${sound}.wav`);
+    audioEl.appendChild(quizSound);
+
+    audioEl.play();
 };
 
 function timer () {
@@ -181,7 +194,8 @@ start.addEventListener('click', (e)=>{
     startScreen.style.display = "none";
     randomise(questions);
     nextQuestion(questionsArray);
-    const timeInterval = setInterval(()=>{if(time>=0 &&!complete){timer();}else{clearInterval(timeInterval); quizScore();}}, 1000);   
+    const timeInterval = setInterval(()=>{if(time>=0 &&!complete){timer();}else{clearInterval(timeInterval); quizScore();}}, 1000);  
+   
 });
 
  submit.addEventListener('click', (e)=>{
