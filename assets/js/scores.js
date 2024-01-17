@@ -4,12 +4,14 @@ const olEl = document.getElementById('highscores');
 let liEl = document.createElement('li');
 const clear = document.getElementById('clear');
 let liArray =[];
+let topTen;
 
 function localArrayInfo() {
     if (localArray){
         userArray = JSON.parse(localArray);
         userArray.sort((a,b)=>{return b.score-a.score});
-        for(let i=0; i<userArray.length; i++){
+        topTen = userArray.length>10 ? 10 : userArray.length;
+        for(let i=0; i<topTen; i++){
             liAppend(userArray[i]);
         };   
     };

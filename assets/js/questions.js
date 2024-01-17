@@ -207,8 +207,3 @@ start.addEventListener('click', (e)=>{
     localStorage.setItem('user', stringified);
     window.open('./highscores.html', target='_self');
  });
-
-
-
-
- 
