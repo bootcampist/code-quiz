@@ -1,7 +1,7 @@
 body {
-  font-family: Arial;
+  font-family: 'Roboto', sans-serif;
   font-size: 120%;
-  /* background-image: url(./sky07-contrast.png); */
+  background-image: url(../kokoro03.png);
   background-size: cover;
   background-repeat: no-repeat;
 }

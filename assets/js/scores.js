@@ -1,3 +1,5 @@
+const body = document.querySelector('body');
+body.setAttribute('style', 'background-image: none');
 const localArray = localStorage.getItem('userArray');
 let userArray;
 const olEl = document.getElementById('highscores');
