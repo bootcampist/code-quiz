@@ -10,6 +10,7 @@ const endScreen = document.getElementById('end-screen');
 const finalScore = document.getElementById('final-score');
 const initials = document.getElementById('initials');
 const submit = document.getElementById('submit');
+const body = document.querySelector('body');
 let questionsArray = [];
 let item;
 let questNum;
@@ -111,13 +112,15 @@ function currentQuestion (question){
 function feedback (string) {
     feedbackDiv.style.display = 'block';
     if (string===correct){
+        body.setAttribute('style', 'background-image: url(./assets/images/kokoro-correct.png)');
         feedbackDiv.innerHTML = 'Correct!';
          audio('correct');
     } else {
+        body.setAttribute('style', 'background-image: url(./assets/images/kokoro-incorrect.png)');
         feedbackDiv.innerHTML = 'Wrong!';
         audio('incorrect');
     }
-    let feedbackTimer = setTimeout(()=>{feedbackDiv.style.display = 'none';}, 1500);
+    let feedbackTimer = setTimeout(()=>{ body.setAttribute('style', 'background-image: url(./assets/images/kokoro01.png)'); feedbackDiv.style.display = 'none';}, 1500);
 };
 
 function audio (sound){
