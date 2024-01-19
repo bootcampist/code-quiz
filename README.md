@@ -4,7 +4,8 @@
 ## Description
 
 The Code Quiz is a series of timed JavaScript-related questions. The aim of the quiz is to reinforce JavaScript concepts for those learning JavaScript. 
-![screenshot](https://github.com/bootcampist/code-quiz/assets/152117886/d104d8c5-9972-4211-8b73-f11a020e4d4f)
+![screenshot](https://github.com/bootcampist/code-quiz/assets/152117886/d3104771-c4e4-4105-b10f-1376e0e172aa)
+
 
 
 ## Installation
